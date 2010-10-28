@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Test::Fatal;
 BEGIN {
-  $Test::Fatal::VERSION = '0.001';
+  $Test::Fatal::VERSION = '0.002';
 }
 # ABSTRACT: incredibly simple helpers for testing code with exceptions
 
@@ -50,7 +50,7 @@ Test::Fatal - incredibly simple helpers for testing code with exceptions
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -59,13 +59,15 @@ version 0.001
 
   use System::Under::Test qw(might_die);
 
-  ok(
-    not exception { might_die; },
+  is(
+    exception { might_die; },
+    undef
     "the code lived",
   );
 
-  ok(
+  isnt(
     exception { might_die; },
+    undef,
     "the code died",
   );
 
