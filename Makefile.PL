@@ -12,7 +12,8 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'incredibly simple helpers for testing code with exceptions',
   'AUTHOR' => 'Ricardo Signes <rjbs@cpan.org>',
   'BUILD_REQUIRES' => {
-    'Test::More' => '0.96'
+    'Test::More' => '0.96',
+    'overload' => '0'
   },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.31'
@@ -26,7 +27,7 @@ my %WriteMakefileArgs = (
     'Exporter' => '5.59',
     'Try::Tiny' => '0.07'
   },
-  'VERSION' => '0.002',
+  'VERSION' => '0.003',
   'test' => {
     'TESTS' => 't/*.t'
   }
