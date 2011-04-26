@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Test::Fatal;
 BEGIN {
-  $Test::Fatal::VERSION = '0.004';
+  $Test::Fatal::VERSION = '0.005';
 }
 # ABSTRACT: incredibly simple helpers for testing code with exceptions
 
@@ -50,7 +50,7 @@ Test::Fatal - incredibly simple helpers for testing code with exceptions
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 

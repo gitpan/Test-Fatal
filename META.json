@@ -40,7 +40,7 @@
          "url" : "git://git.codesimply.com/Test-Fatal.git"
       }
    },
-   "version" : "0.004",
+   "version" : "0.005",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
