@@ -8,4 +8,5 @@ README
 dist.ini
 lib/Test/Fatal.pm
 t/basic.t
+t/like-exception.t
 t/release-pod-syntax.t
