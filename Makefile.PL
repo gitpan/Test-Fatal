@@ -9,29 +9,31 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'incredibly simple helpers for testing code with exceptions',
-  'AUTHOR' => 'Ricardo Signes <rjbs@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Test::Builder::Tester' => '0',
-    'Test::More' => '0.47',
-    'overload' => '0'
+  "ABSTRACT" => "incredibly simple helpers for testing code with exceptions",
+  "AUTHOR" => "Ricardo Signes <rjbs\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "Test::Builder::Tester" => 0,
+    "Test::More" => "0.47",
+    "overload" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Test-Fatal',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Test::Fatal',
-  'PREREQ_PM' => {
-    'Carp' => '0',
-    'Exporter' => '5.57',
-    'Test::Builder' => '0',
-    'Try::Tiny' => '0.07'
+  "DISTNAME" => "Test-Fatal",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Test::Fatal",
+  "PREREQ_PM" => {
+    "Carp" => 0,
+    "Exporter" => "5.57",
+    "Test::Builder" => 0,
+    "Try::Tiny" => "0.07",
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.006',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.007",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

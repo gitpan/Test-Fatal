@@ -1,5 +1,9 @@
 Revision history for Test-Fatal
 
+0.007     2011-10-31 23:22:47 America/New_York
+          revert the mistake by which 0.004 allowed blocks after "exception" as
+          well as "success"
+
 0.006     2011-06-01 22:55:10 America/New_York
           crank back the Test::More and Exporter requirements
 
