@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Test::Fatal;
 {
-  $Test::Fatal::VERSION = '0.008';
+  $Test::Fatal::VERSION = '0.009';
 }
 # ABSTRACT: incredibly simple helpers for testing code with exceptions
 
@@ -78,7 +78,7 @@ Test::Fatal - incredibly simple helpers for testing code with exceptions
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 
@@ -93,10 +93,10 @@ version 0.008
     "the code lived",
   );
 
-  isnt(
+  like(
     exception { might_die; },
-    undef,
-    "the code died",
+    qr/turns out it died/,
+    "the code died as expected",
   );
 
   isa_ok(
@@ -122,7 +122,7 @@ It exports one routine by default: C<exception>.
 C<exception> takes a bare block of code and returns the exception thrown by
 that block.  If no exception was thrown, it returns undef.
 
-B<ACHTUNG!>  If the block results in a I<false> exception, such as 0 or the
+B<Achtung!>  If the block results in a I<false> exception, such as 0 or the
 empty string, Test::Fatal itself will die.  Since either of these cases
 indicates a serious problem with the system under testing, this behavior is
 considered a I<feature>.  If you must test for these conditions, you should use
@@ -151,6 +151,17 @@ exception" will itself be matched by the regex.  Instead, write this:
   my $exception = exception { ... };
   like( $exception, qr/foo/, "foo appears in the exception" );
 
+B<Achtung>: One final bad idea:
+
+  isnt( exception { ... }, undef, "my code died!");
+
+It's true that this tests that your code died, but you should really test that
+it died I<for the right reason>.  For example, if you make an unrelated mistake
+in the block, like using the wrong dereference, your test will pass even though
+the code to be tested isn't really run at all.  If you're expecting an
+inspectable exception with an identifier or class, test that.  If you're
+expecting a string exception, consider using C<like>.
+
 =head2 success
 
   try {
@@ -177,8 +188,8 @@ provide TAP output indicating if it did, or did not throw an exception.
 These provide an easy upgrade path for replacing existing unit tests based on
 C<Test::Exception>.
 
-RJBS does not using this except as a convenience while porting tests to use
-Test::Fatal's C<exception> routine.
+RJBS does not suggest using this except as a convenience while porting tests to
+use Test::Fatal's C<exception> routine.
 
   use Test::More tests => 2;
   use Test::Fatal qw(dies_ok lives_ok);
