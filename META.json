@@ -46,7 +46,7 @@
          "web" : "https://github.com/rjbs/test-fatal"
       }
    },
-   "version" : "0.009",
+   "version" : "0.010",
    "x_Dist_Zilla" : {
       "plugins" : [
          {

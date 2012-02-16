@@ -25,7 +25,7 @@ requires:
 resources:
   homepage: https://github.com/rjbs/test-fatal
   repository: https://github.com/rjbs/test-fatal.git
-version: 0.009
+version: 0.010
 x_Dist_Zilla:
   plugins:
     -
