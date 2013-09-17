@@ -39,7 +39,7 @@
          "requires" : {
             "Capture::Tiny" : "0",
             "Test::Builder::Tester" : "0",
-            "Test::More" : "0.47",
+            "Test::More" : "0.96",
             "blib" : "0",
             "overload" : "0"
          }
@@ -57,7 +57,7 @@
          "web" : "https://github.com/rjbs/Test-Fatal"
       }
    },
-   "version" : "0.011",
+   "version" : "0.012",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.019003"
@@ -238,29 +238,6 @@
             "class" : "Dist::Zilla::Plugin::Git::Push",
             "name" : "@RJBS/@Git/Push",
             "version" : "2.014"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::RemovePrereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::RemovePrereqs" : {
-                  "modules_to_remove" : [
-                     "Test::More"
-                  ]
-               }
-            },
-            "name" : "RemovePrereqs",
-            "version" : "4.300038"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Prereqs",
-            "config" : {
-               "Dist::Zilla::Plugin::Prereqs" : {
-                  "phase" : "test",
-                  "type" : "requires"
-               }
-            },
-            "name" : "TestRequires",
-            "version" : "4.300038"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
